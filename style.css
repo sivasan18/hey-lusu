@@ -1,0 +1,302 @@
+:root {
+    --primary-pink: #ffbcc9;
+    --dark-pink: #ff4d6d;
+    --deep-pink: #ff0a54;
+    --soft-white: #fffafa;
+    --light-pink-grad: linear-gradient(180deg, #fff0f3 0%, #ffedf0 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light-pink-grad);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    color: #555;
+    transition: background 1.5s ease;
+}
+
+body.celebrating {
+    background: radial-gradient(circle, #fff0f3 0%, #ffd6e0 100%);
+}
+
+.footer-note {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    font-size: 0.85rem;
+    color: var(--dark-pink);
+    opacity: 0.7;
+    z-index: 100;
+}
+
+.container {
+    text-align: center;
+    padding: 1rem;
+    z-index: 10;
+    width: 100%;
+}
+
+.romantic-heading {
+    font-size: 3.5rem;
+    color: var(--dark-pink);
+    margin-top: -50px;
+    margin-bottom: 3rem;
+    animation: gentleFloat 4s ease-in-out infinite;
+}
+
+.heart-font {
+    font-family: 'Love Light', cursive;
+    font-size: 6.5rem;
+    line-height: 1;
+}
+
+.question-text {
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    color: #d63031;
+}
+
+.buttons-row {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    min-height: 120px;
+    align-items: center;
+}
+
+.btn {
+    padding: 1.1rem 2.8rem;
+    font-size: 1.4rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(255, 188, 201, 0.3);
+}
+
+.floating-btn {
+    animation: buttonFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes buttonFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.yes-btn {
+    background-color: var(--dark-pink);
+    color: white;
+    z-index: 11;
+}
+
+.yes-btn:hover {
+    transform: scale(1.08);
+}
+
+.no-btn-wrapper {
+    position: relative;
+    width: 130px;
+    height: 60px;
+}
+
+.no-btn {
+    background-color: #f1f2f6;
+    color: #777;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.subtle-heart {
+    position: absolute;
+    color: rgba(255, 188, 201, 0.4);
+    animation: drift linear infinite;
+}
+
+@keyframes drift {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(15px, -15px) scale(1.1);
+    }
+}
+
+@keyframes gentleFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.celebration-msg {
+    animation: fadeIn 1.5s ease;
+}
+
+.main-celebration-text {
+    font-size: 3rem;
+    color: var(--dark-pink);
+    margin-bottom: 2rem;
+    font-family: 'Love Light', cursive;
+}
+
+.flirty-line {
+    font-size: 1.3rem;
+    margin: 1.2rem 0;
+    opacity: 0;
+    transform: translateY(15px);
+    color: #c0392b;
+}
+
+.active-line {
+    animation: slideIn 0.8s forwards;
+}
+
+.final-romantic {
+    margin-top: 3rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--dark-pink);
+    font-family: 'Love Light', cursive;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#petal-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.audio-control {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 100;
+}
+
+.music-btn {
+    background: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-msg {
+    position: absolute;
+    background: white;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    pointer-events: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    white-space: nowrap;
+    animation: miniPop 0.3s ease-out forwards;
+    color: var(--dark-pink);
+    font-weight: 600;
+}
+
+@keyframes miniPop {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .romantic-heading {
+        font-size: 2.2rem;
+        margin-top: -20px;
+    }
+
+    .heart-font {
+        font-size: 3.8rem;
+    }
+
+    .question-text {
+        font-size: 1.8rem;
+    }
+
+    .main-celebration-text {
+        font-size: 2rem;
+    }
+
+    .buttons-row {
+        gap: 1rem;
+    }
+}
