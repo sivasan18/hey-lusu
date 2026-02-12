@@ -3,59 +3,67 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Will You Be My Valentine? 💖</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Love+Light&family=Poppins:wght@400;600&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-    <div id="hearts-container"></div>
-    <div id="sparkles-container"></div>
+    <!-- Floating hearts background -->
+    <div id="hearts-bg"></div>
 
-    <div class="footer-note">Made with Love 💗</div>
+    <!-- Ambient glow -->
+    <div class="ambient-glow"></div>
 
-    <main class="container" id="main-content">
-        <header>
-            <h1 class="romantic-heading heart-font">Hey Lusu 💖</h1>
-        </header>
+    <!-- ===== SCREEN 1: LANDING ===== -->
+    <div id="screen-landing" class="screen active">
+        <h1 class="main-question">Will you be my Valentine?</h1>
+        <div class="buttons-area">
+            <button id="yes-btn" class="btn btn-yes">YES 💘</button>
+            <button id="no-btn" class="btn btn-no">NO 🙈</button>
+        </div>
+        <!-- Escape messages -->
+        <div id="escape-messages"></div>
+    </div>
 
-        <section class="question-section" id="question-area">
-            <h2 class="question-text">Will you be my Valentine?</h2>
-            <div class="buttons-row">
-                <button id="yes-btn" class="btn yes-btn floating-btn">YES 💘</button>
-                <div class="no-btn-wrapper">
-                    <button id="no-btn" class="btn no-btn floating-btn">NO 🙈</button>
+    <!-- ===== HEART EXPLOSION OVERLAY ===== -->
+    <div id="heart-explosion" class="screen">
+        <div class="big-heart">💖</div>
+        <canvas id="explosion-canvas"></canvas>
+    </div>
+
+    <!-- ===== SCREEN 2: LOVE LETTER ===== -->
+    <div id="screen-letter" class="screen">
+        <div class="envelope-wrapper">
+            <!-- Envelope -->
+            <div class="envelope" id="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-body">
+                    <div class="heart-seal">💌</div>
                 </div>
             </div>
-        </section>
-
-        <section class="celebration-section hidden" id="celebration-area">
-            <div class="celebration-msg">
-                <h2 class="main-celebration-text">Ayyy Lusu! You made my heart so happy 💖</h2>
-                <div class="flirty-lines" id="flirty-lines">
-                    <p class="flirty-line">Are you a nurse? Because my heart beats faster when you’re near 🩺💓</p>
-                    <p class="flirty-line">I must be a developer… because I just committed my life to you 💻❤️</p>
-                    <p class="flirty-line">Lusu, you are my daily dose of happiness da 😄💗</p>
-                    <p class="flirty-line final-romantic">Happy Valentine’s Day, my love 💝</p>
-                </div>
+            <!-- Letter -->
+            <div class="letter" id="letter">
+                <div class="letter-content" id="letter-content"></div>
             </div>
-        </section>
-    </main>
+        </div>
+        <!-- Floating hearts after letter -->
+        <canvas id="post-hearts-canvas"></canvas>
+    </div>
 
-    <div class="audio-control" id="audio-control">
+    <!-- Music toggle -->
+    <div class="audio-control hidden" id="audio-control">
         <button id="music-toggle" class="music-btn">
-            <span id="music-icon">🔇</span>
+            <span id="music-icon">�</span>
         </button>
     </div>
 
     <audio id="bg-music" loop>
         <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
     </audio>
-
-    <canvas id="petal-canvas"></canvas>
 
     <script src="script.js"></script>
 </body>
