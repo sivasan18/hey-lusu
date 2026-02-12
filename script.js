@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== PHASE 3: TYPING EFFECT =====
     const letterLines = [
-        { text: "Hey LUSU 💖", delay: 500, pause: 1200 },
+        { text: "Oii Lusu 💖", delay: 500, pause: 1200 },
         { text: "", delay: 0, pause: 200 },
         { text: "I've been waiting for this moment…", delay: 500, pause: 1500 },
         { text: "", delay: 0, pause: 200 },
